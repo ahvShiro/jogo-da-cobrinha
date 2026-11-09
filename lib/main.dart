@@ -1,20 +1,8 @@
+import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
+import 'package:jogo_da_cobrinha/jogo_da_cobrinha.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(GameWidget(game: JogoDaCobrinha()));
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
-    );
-  }
-}
