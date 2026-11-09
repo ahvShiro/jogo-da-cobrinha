@@ -43,8 +43,13 @@ class JogoDaCobrinha extends FlameGame {
       button: _visual(texto, Colors.white24),
       buttonDown: _visual(texto, Colors.white54),
       margin: margem,
-      onPressed: () => player.velocity = direcao,
+      onPressed: () => handleOnPressed(direcao),
     );
+  }
+
+  void handleOnPressed(Vector2 direcao) {
+    if (player.velocity + direcao == Vector2.zero()) return;
+    player.velocity = direcao.clone();
   }
 
   PositionComponent _visual(String texto, Color cor) {
